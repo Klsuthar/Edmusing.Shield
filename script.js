@@ -103,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const swiper = new Swiper(testimonialsSliderEl, {
             loop: true,
             grabCursor: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: '.testimonials-swiper-container .swiper-pagination',
                 clickable: true,
