@@ -3,14 +3,13 @@
 /* ========================================= */
 
 /* 1. FONT IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+/* Font import is now handled in the HTML for better performance */
 
 /* 2. CSS CUSTOM PROPERTIES (VARIABLES) */
-/* Yeh aapki website ka "Theme" hai. Yahan se color badalne par poori website par badal jayega. */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --primary-gradient-hover: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-    
+
     --color-text-dark: #2d3436;
     --color-text-light: #636e72;
     --color-background-light: #ffffff;
@@ -18,7 +17,7 @@
     --color-accent: #667eea;
     --color-border: #e8ecf3;
 
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
 }
 
@@ -43,7 +42,12 @@ body {
 }
 
 /* 4. GLOBAL TYPOGRAPHY */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-secondary);
     font-weight: 600;
     line-height: 1.3;
@@ -51,17 +55,64 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-dark);
 }
 
-h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; }
-h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 600; }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600; }
-p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: var(--color-text-light);
+    font-weight: 400;
+}
+
+/* ========================================= */
+/*      NEW: Unified Section Header          */
+/* ========================================= */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
 
 .section-title {
-    text-align: center;
-    margin-bottom: 3rem;
     font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
     color: var(--color-text-dark);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 
 /* 5. GLOBAL LAYOUT & UTILITY CLASSES */
 .container {
@@ -77,7 +128,8 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
 }
 
 /* 6. REUSABLE BUTTON STYLES */
-.primary-cta, .course-btn {
+.primary-cta,
+.course-btn {
     background: var(--primary-gradient);
     color: var(--color-background-light);
     border: none;
@@ -93,7 +145,8 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     display: inline-block;
 }
 
-.primary-cta:hover, .course-btn:hover {
+.primary-cta:hover,
+.course-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
     background: var(--primary-gradient-hover);
@@ -153,17 +206,6 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
 .about-us-section {
     padding: 6rem 0;
     background-color: var(--color-background-light);
-}
-
-.about-us-section .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.about-us-section .section-header p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 1rem auto 0;
 }
 
 /* Core values/pillars layout */
@@ -288,6 +330,7 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
         gap: 3rem;
         text-align: center;
     }
+
     .founder-text blockquote {
         padding-left: 0;
         border-left: none;
@@ -298,22 +341,6 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
 .accreditations-section {
     padding: 6rem 0;
     background-color: var(--color-background-light);
-}
-
-.accreditations-section .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.accreditations-section .section-header h2 {
-    color: var(--color-text-dark);
-}
-
-.accreditations-section .section-header p {
-    font-size: 1.1rem;
-    color: var(--color-text-light);
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .accreditations-grid {
@@ -393,11 +420,6 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     background: var(--color-background-offwhite);
 }
 
-.courses-section .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -416,7 +438,6 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     display: flex;
 }
 
-/* FIX 1: Card ka hover effect (yeh pehle se tha) */
 .course-offering-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -428,7 +449,7 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .course-grade-level {
@@ -461,10 +482,9 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     font-size: 0.8rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition ke liye */
+    transition: all 0.3s ease;
 }
 
-/* FIX 2: Tag button ka hover effect (yeh add kiya gaya hai) */
 .tag-btn:hover {
     background: var(--color-accent);
     color: var(--color-background-light);
@@ -473,7 +493,7 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
 }
 
 .card-content .course-btn {
-    margin-top: auto; 
+    margin-top: auto;
     font-size: 0.9rem;
     padding: 0.7rem 1.5rem;
     align-self: flex-start;
@@ -553,19 +573,17 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
 /* ========================================= */
 
 .site-footer {
-    /* Global CSS variables ka istemal */
     background: var(--color-text-dark);
     color: var(--color-background-light);
-    
     text-align: center;
     padding: 3rem 2rem;
 }
 
 .site-footer p {
-    margin-bottom: 0; /* Paragraph ka default margin hataya */
+    margin-bottom: 0;
     font-size: 0.95rem;
     font-weight: 500;
-    opacity: 0.8; /* Text ko thoda halka banaya */
+    opacity: 0.8;
 }
 
 /* ========================================= */
@@ -669,7 +687,8 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
         width: 2rem;
         height: 2rem;
         cursor: pointer;
-        z-index: 1001; /* Above the overlay */
+        z-index: 1001;
+        /* Above the overlay */
     }
 
     .hamburger-menu span {
@@ -681,12 +700,21 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     }
 
     /* Hamburger animation */
-    .hamburger-menu.active span:nth-child(1) { transform: rotate(45deg) translate(0.5rem, 0.5rem); }
-    .hamburger-menu.active span:nth-child(2) { opacity: 0; }
-    .hamburger-menu.active span:nth-child(3) { transform: rotate(-45deg) translate(0.5rem, -0.5rem); }
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+    }
 
     .nav-menu {
-        display: none; /* Hide by default */
+        display: none;
+        /* Hide by default */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -702,15 +730,17 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     }
 
     .nav-menu.active {
-        display: flex; /* Show when active */
+        display: flex;
+        /* Show when active */
     }
-    
+
     .nav-menu li a {
         font-size: 1.5rem;
     }
 
     .logo-section .tagline {
-        display: none; /* Hide tagline on small screens */
+        display: none;
+        /* Hide tagline on small screens */
     }
 }
 
@@ -731,13 +761,12 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     position: relative;
 }
 
-/* FIX: Har selector ke aage #hero-slider laga diya gaya hai */
 #hero-slider .swiper-slide {
-    aspect-ratio: 1.5 / 1; 
+    aspect-ratio: 1.5 / 1;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, opacity 0.4s ease;
     transform: scale(0.85);
     opacity: 0.6;
@@ -746,7 +775,7 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
 #hero-slider .swiper-slide-active {
     transform: scale(1);
     opacity: 1;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 #hero-slider .swiper-pagination {
@@ -789,15 +818,14 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     overflow: hidden;
 }
 
-/* FIX: Yeh line indicators ko is container ke andar band kar degi */
 .testimonials-swiper-container {
     width: 100%;
     padding: 2rem 40px 4rem 40px;
-    position: relative; /* SABSE ZAROORI */
+    position: relative;
 }
 
 .testimonials-swiper-container .swiper-wrapper {
-    align-items: stretch; 
+    align-items: stretch;
 }
 
 .testimonials-swiper-container .swiper-slide {
@@ -823,9 +851,12 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     padding: 2.5rem;
     position: relative;
     flex-grow: 1;
-    max-height: 250px; /* Set a max height */
-    overflow-y: auto; /* Add a scrollbar when content overflows */
-    padding-right: 1.5rem; /* Make space for the scrollbar */
+    max-height: 250px;
+    /* Set a max height */
+    overflow-y: auto;
+    /* Add a scrollbar when content overflows */
+    padding-right: 1.5rem;
+    /* Make space for the scrollbar */
 }
 
 .testimonial-body::-webkit-scrollbar {
@@ -868,7 +899,8 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     align-items: center;
     gap: 1rem;
     padding: 1.5rem 2.5rem;
-    background: var(--color-background-offwhite); /* Changed background */
+    background: var(--color-background-offwhite);
+    /* Changed background */
     border-top: 1px solid var(--color-border);
 }
 
@@ -891,13 +923,15 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0;
-    color: var(--color-text-dark); /* Changed text color */
+    color: var(--color-text-dark);
+    /* Changed text color */
 }
 
 .author-details .student-location {
     font-size: 0.9rem;
     margin: 0;
-    color: var(--color-text-light); /* Changed text color */
+    color: var(--color-text-light);
+    /* Changed text color */
 }
 
 .testimonials-swiper-container .swiper-pagination {
@@ -937,22 +971,12 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     margin: 0 auto;
 }
 
-.why-us-title {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-    font-weight: 700;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
 .why-us-features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 
 .feature-card {
@@ -1018,9 +1042,11 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     .why-us-section {
         padding: 4rem 1rem;
     }
+
     .why-us-stats {
         gap: 2rem;
     }
+
     .stat .number {
         font-size: 2.5rem;
     }
@@ -1030,6 +1056,7 @@ p { margin-bottom: 1.25rem; color: var(--color-text-light); font-weight: 400; }
     .why-us-features {
         grid-template-columns: 1fr;
     }
+
     .why-us-stats {
         flex-direction: column;
         gap: 1.5rem;

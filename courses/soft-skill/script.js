@@ -1,0 +1,1 @@
+// JavaScript for Soft Skill page
