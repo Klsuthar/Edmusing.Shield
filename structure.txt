@@ -1,8 +1,15 @@
-Edmu/
-│   index.html
-│   script.js
-│   structure.txt
-│   style.css
+Edmusing.Shield/
+│
+├── index.html
+├── header.html
+├── footer.html
+├── contact-section.html
+├── script.js
+├── style.css
+├── structure.txt
+│
+├── js/
+│   └── common.js
 │
 ├── assets/
 │   └── images/
@@ -17,11 +24,43 @@ Edmu/
     │   index.html
     │   script.js
     │   style.css
+    │
     ├── english/
+    │   ├── english.html
+    │   ├── script.js
+    │   └── style.css
+    │
     ├── financial-literacy/
+    │   ├── financial-literacy.html
+    │   ├── script.js
+    │   └── style.css
+    │
     ├── foreign-languages/
+    │   ├── foreign-languages.html
+    │   ├── script.js
+    │   └── style.css
+    │
     ├── life-coach/
+    │   ├── life-coach.html
+    │   ├── script.js
+    │   └── style.css
+    │
     ├── mathematics/
+    │   ├── mathematics.html
+    │   ├── script.js
+    │   └── style.css
+    │
     ├── science/
+    │   ├── science.html
+    │   ├── script.js
+    │   └── style.css
+    │
     ├── soft-skill/
+    │   ├── soft-skill.html
+    │   ├── script.js
+    │   └── style.css
+    │
     └── tedx/
+        ├── tedx.html
+        ├── script.js
+        └── style.css
