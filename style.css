@@ -432,17 +432,17 @@ p {
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
-
+    /* Remove last-child centering for accreditation grid */
     .accreditations-grid .accred-item:last-child {
-        grid-column: 1 / -1;
-        justify-self: center;
-        width: calc(50% - 0.75rem);
+        grid-column: auto;
+        justify-self: auto;
+        width: 100%;
     }
 }
 
 @media (max-width: 400px) {
     .accreditations-grid .accred-item:nth-last-child(2):nth-child(odd) {
-        grid-column: 1 / -1;
+        grid-column: auto;
     }
 }
 
