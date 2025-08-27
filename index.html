@@ -531,9 +531,19 @@
         <p>© 2025 Edmusing Shield. All Rights Reserved.</p>
     </footer>
 
-    <!-- Ab humein sirf ek JS file link karni hai jo sab kuch manage karegi -->
+    <!-- Contact section will be loaded here -->
+    <div id="contact-social-container"></div>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Dynamically load contact section
+        fetch('contact-section.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('contact-social-container').innerHTML = html;
+            });
+    </script>
 </body>
 
 </html>

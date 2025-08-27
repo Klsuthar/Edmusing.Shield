@@ -1,0 +1,27 @@
+Edmu/
+│   index.html
+│   script.js
+│   structure.txt
+│   style.css
+│
+├── assets/
+│   └── images/
+│       ├── dr-arpita-de.jpeg
+│       ├── banner/
+│       ├── certificate/
+│       ├── logo/
+│       ├── teachers/
+│       └── testimonials/
+│
+└── courses/
+    │   index.html
+    │   script.js
+    │   style.css
+    ├── english/
+    ├── financial-literacy/
+    ├── foreign-languages/
+    ├── life-coach/
+    ├── mathematics/
+    ├── science/
+    ├── soft-skill/
+    └── tedx/
