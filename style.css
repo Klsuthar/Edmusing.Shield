@@ -362,18 +362,19 @@ p {
 
 .accreditations-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
     justify-items: center;
 }
 
 .accred-item {
-    width: 220px;
-    height: 220px;
+    width: 100%;
+    max-width: 180px;
+    height: 180px;
     background: var(--color-background-offwhite);
     border: 1px solid var(--color-border);
     border-radius: 15px;
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -391,13 +392,10 @@ p {
 }
 
 .accred-item img {
-    max-width: 100px;
-    max-height: 70px;
+    max-width: 80px;
+    max-height: 50px;
     margin-bottom: 8px;
     object-fit: contain;
-    filter: grayscale(80%);
-    opacity: 0.8;
-    transition: all 0.3s ease-in-out;
 }
 
 .accred-item:hover img {
@@ -419,13 +417,13 @@ p {
         gap: 16px;
     }
     .accred-item {
-        width: 160px;
-        height: 160px;
-        padding: 1rem 0.5rem;
+        max-width: 140px;
+        height: 140px;
+        padding: 1rem 0.25rem;
     }
     .accred-item img {
-        max-width: 70px;
-        max-height: 40px;
+        max-width: 50px;
+        max-height: 30px;
     }
 }
 
