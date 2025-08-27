@@ -1225,9 +1225,9 @@ p {
     transition: width 0.5s, border-radius 0.5s, padding 0.5s, background 0.3s, box-shadow 0.3s;
     overflow: hidden;
     height: 60px;
-    width: 260px;
-    padding: 0 24px 0 16px;
-    gap: 12px;
+    width: 180px;
+    padding: 0 16px 0 12px;
+    gap: 8px;
 }
 .sticky-contact-button.collapsed {
     width: 60px;
@@ -1244,10 +1244,25 @@ p {
     transition: font-size 0.3s;
 }
 .sticky-contact-button .contact-text {
-    white-space: nowrap;
-    font-size: 1rem;
+    white-space: normal;
+    font-size: 0.85rem;
     font-weight: 500;
+    line-height: 1.2;
     transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.sticky-contact-button .contact-text .top-line {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.sticky-contact-button .contact-text .bottom-line {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #eafaf1;
 }
 .sticky-contact-button.collapsed .contact-text {
     opacity: 0;
