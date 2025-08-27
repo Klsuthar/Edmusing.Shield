@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Project</title>
+    <title>Life Coach - Edmusing Shield</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="header-placeholder"></div>
+
     <h1>Working</h1>
 
-    <!-- Footer yahan apne aap load ho jayega -->
-    <footer class="site-footer" id="contact">
-        <p>© 2025 Edmusing Shield. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Contact section will be loaded here -->
     <div id="contact-social-container"></div>
+    <div id="footer-placeholder"></div>
+
+    <a href="tel:+916289849141" class="sticky-call-button">
+        <i class="fas fa-phone-alt"></i>
+    </a>
 
     <script src="script.js"></script>
-    <script>
-        fetch('../../contact-section.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('contact-social-container').innerHTML = html;
-            });
-    </script>
+    <script src="../../js/common.js" data-base-path="../../"></script>
 </body>
 </html>
