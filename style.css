@@ -797,7 +797,7 @@ p {
 }
 
 #hero-slider .swiper-slide {
-    aspect-ratio: 1.5 / 1;
+    aspect-ratio: 1 / 1;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -805,6 +805,17 @@ p {
     transition: transform 0.4s ease, opacity 0.4s ease;
     transform: scale(0.85);
     opacity: 0.6;
+    width: 100%;
+    height: auto;
+    min-height: 320px;
+    max-height: 600px;
+}
+
+@media (max-width: 600px) {
+    #hero-slider .swiper-slide {
+        min-height: 200px;
+        max-height: 320px;
+    }
 }
 
 #hero-slider .swiper-slide-active {
