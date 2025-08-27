@@ -1207,67 +1207,58 @@ p {
     }
 }
 
-/* Sticky Call Button */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.18);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.18);
-    }
-}
-
-.sticky-whatsapp-button {
+/* === NEW: Sticky Floating Contact Button === */
+.sticky-contact-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: var(--font-secondary, 'Poppins', sans-serif);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: width 0.5s, border-radius 0.5s, padding 0.5s, background 0.3s, box-shadow 0.3s;
+    overflow: hidden;
     height: 60px;
+    width: 260px;
+    padding: 0 24px 0 16px;
+    gap: 12px;
+}
+.sticky-contact-button.collapsed {
+    width: 60px;
     border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+}
+.sticky-contact-button .contact-icon {
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
-    transition: transform 0.3s;
-    text-decoration: none;
-    animation: pulse 2s infinite;
+    transition: font-size 0.3s;
 }
-
-.sticky-whatsapp-button:hover {
-    transform: scale(1.1);
-    animation-play-state: paused;
-}
-
-.sticky-whatsapp-button i {
-    color: white;
-}
-
-.whatsapp-tooltip {
-    position: absolute;
-    right: 70px; /* Position to the left of the button */
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+.sticky-contact-button .contact-text {
     white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: opacity 0.3s;
 }
-
-.sticky-whatsapp-button:hover .whatsapp-tooltip {
-    opacity: 1;
-    visibility: visible;
+.sticky-contact-button.collapsed .contact-text {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+.sticky-contact-button:hover {
+    background: #1da851;
+}
+/* Remove old tooltip hover animation */
+.sticky-whatsapp-button, .whatsapp-tooltip {
+    display: none !important;
 }

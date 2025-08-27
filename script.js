@@ -123,4 +123,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === Sticky Contact Button Animation ===
+    (function() {
+        const btn = document.getElementById('stickyContactBtn');
+        if (!btn) return;
+
+        // Configurable options
+        const EXPAND_CLASS = '';
+        const COLLAPSE_CLASS = 'collapsed';
+        const expandTime = 5000; // ms
+        const collapseTime = 3000; // ms
+        const cycleDelay = 0; // ms between cycles
+
+        let expanded = true;
+        function toggleState() {
+            expanded = !expanded;
+            btn.classList.toggle(COLLAPSE_CLASS, !expanded);
+        }
+
+        function cycle() {
+            toggleState();
+            setTimeout(() => {
+                toggleState();
+                setTimeout(cycle, expanded ? collapseTime : expandTime);
+            }, expanded ? collapseTime : expandTime);
+        }
+
+        // Start expanded, then collapse after 3s, then expand after 5s, repeat
+        setTimeout(() => {
+            btn.classList.add(COLLAPSE_CLASS);
+            expanded = false;
+            setTimeout(cycle, expandTime);
+        }, collapseTime);
+    })();
+
 });
